@@ -867,6 +867,15 @@ function __bobthefish_prompt_dir -S -d 'Display a shortened form of the current 
   __bobthefish_path_segment "$PWD"
 end
 
+function __bobthefish_pre_prompt -d 'Adjust settings before prompt is shown' --on-event fish_prompt
+    if test "$COLUMNS" -lt "$theme_short_prompt_cols"
+        set -g theme_newline_cursor yes
+        set -g theme_display_date no
+    else
+        set -g theme_newline_cursor no
+        set -g theme_display_date yes
+    end
+end
 
 # ==============================
 # Apply theme
