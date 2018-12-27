@@ -16,7 +16,6 @@ function __bobthefish_glyphs -S -d 'Define glyphs used by bobthefish'
 
   # Python glyphs
   set -x superscript_glyph       \u00B9 \u00B2 \u00B3
-  # set -x virtualenv_glyph        \u25F0
   set -x pypy_glyph              \u1D56
 
   set -x ruby_glyph              ''
@@ -70,11 +69,7 @@ function __bobthefish_glyphs -S -d 'Define glyphs used by bobthefish'
     set git_dirty_glyph      \uF448 '' # nf-oct-pencil
     set git_staged_glyph     \uF0C7 '' # nf-fa-save
     set git_stashed_glyph    \uF0C6 '' # nf-fa-paperclip
-    # set git_untracked_glyph  \uF128 '' # nf-fa-question
     set git_untracked_glyph  \uF141 '' # nf-fa-ellipsis_h
-
-    set git_ahead_glyph      \uF47B # nf-oct-chevron_up
-    set git_behind_glyph     \uF47C # nf-oct-chevron_down
 
     set git_plus_glyph       \uF0DE # fa-sort-asc
     set git_minus_glyph      \uF0DD # fa-sort-desc
