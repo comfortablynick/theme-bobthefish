@@ -688,13 +688,17 @@ function __bobthefish_prompt_virtualfish -S -d "Display current Python virtual e
   set -l version_glyph (__bobthefish_virtualenv_python_version)
   if [ "$version_glyph" ]
     __bobthefish_start_segment $color_virtualfish
-    echo -ns $virtualenv_glyph $version_glyph ' '
+    if [ "$virtualenv_glyph" ]
+        echo -ns $virtualenv_glyph ' '
+    end
+      if [ "$VIRTUAL_ENV" ]
+        echo -ns (basename "$VIRTUAL_ENV")
+      else if [ "$CONDA_DEFAULT_ENV" ]
+        echo -ns (basename "$CONDA_DEFAULT_ENV")
+      end
+    echo -ns $version_glyph
   end
-  if [ "$VIRTUAL_ENV" ]
-    echo -ns (basename "$VIRTUAL_ENV") ' '
-  else if [ "$CONDA_DEFAULT_ENV" ]
-    echo -ns (basename "$CONDA_DEFAULT_ENV") ' '
-  end
+  echo -ns ' '
 end
 
 function __bobthefish_prompt_virtualgo -S -d 'Display current Go virtual environment'
