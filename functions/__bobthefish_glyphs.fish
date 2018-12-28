@@ -78,6 +78,6 @@ function __bobthefish_glyphs -S -d 'Define glyphs used by bobthefish'
 
   # Avoid ambiguous glyphs
   if [ "$theme_avoid_ambiguous_glyphs" = "yes" ]
-    set git_untracked_glyph '...'
+    set git_untracked_glyph '…'
   end
 end
