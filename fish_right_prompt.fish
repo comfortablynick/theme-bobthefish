@@ -3,7 +3,12 @@
 
 function __bobthefish_cmd_duration -S -d 'Show command duration'
   [ "$theme_display_cmd_duration" = "no" ]; and return
-  [ -z "$CMD_DURATION" -o "$CMD_DURATION" -lt 100 ]; and return
+  
+  # Use theme_display_cmd_duration as threshold if set
+  set -q theme_display_cmd_duration
+  or set theme_display_cmd_duration 0
+
+  [ -z "$CMD_DURATION" -o "$CMD_DURATION" -lt $theme_display_cmd_duration ]; and return
 
   if [ "$CMD_DURATION" -lt 5000 ]
     echo -ns $CMD_DURATION 'ms'
