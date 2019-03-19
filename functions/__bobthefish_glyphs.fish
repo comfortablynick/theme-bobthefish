@@ -45,7 +45,7 @@ function __bobthefish_glyphs -S -d 'Define glyphs used by bobthefish'
 
   # Disable Powerline fonts (unless we're using nerd fonts instead)
   if [ "$theme_powerline_fonts" = "no" -a "$theme_nerd_fonts" != "yes" ]
-    set branch_glyph            \u2387
+    set branch_glyph            \uE0A0 #  # \u2387 is ugly and may not be needed
     set right_black_arrow_glyph ''
     set right_arrow_glyph       ''
     set left_black_arrow_glyph  ''
