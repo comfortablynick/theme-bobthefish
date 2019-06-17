@@ -377,7 +377,10 @@ function __bobthefish_finish_segments -S -d 'Close open prompt segments'
     if [ "$theme_newline_cursor" = 'yes' ]
         echo -ens "\n"
         set_color $fish_color_autosuggestion
-        if [ "$theme_powerline_fonts" = "no" ]
+
+        if set -q theme_newline_prompt
+            echo -ens "$theme_newline_prompt"
+        else if [ "$theme_powerline_fonts" = "no" ]
             echo -ns '> '
         else
             echo -ns "$right_arrow_glyph "
@@ -976,8 +979,14 @@ end
 # ==============================
 
 function fish_prompt -d 'bobthefish, a fish theme optimized for awesome'
-    # Save the last status for later (do this before the `set` calls below)
+    # Save the last status for later (do this before anything else)
     set -l last_status $status
+
+    # Use a simple prompt on dumb terminals.
+    if [ "$TERM" = "dumb" ]
+        echo "> "
+        return
+    end
 
     __bobthefish_glyphs
     __bobthefish_colors $theme_color_scheme
