@@ -6,7 +6,7 @@ function __bobthefish_cmd_duration -S -d 'Show command duration'
   [ "$theme_display_cmd_duration" = "no" ]; and return
 
   # Use theme_display_cmd_duration as threshold if number
-  if string match -qr '\D' $theme_display_cmd_duration
+  if not string match -qrv '\D' $theme_display_cmd_duration
       # NaN (has non-digit); set to 0
       set theme_display_cmd_duration 0
   end
