@@ -2,16 +2,15 @@
 
 `bobthefish` is a Powerline-style, Git-aware [fish][fish] theme optimized for awesome.
 
-[![Oh My Fish](https://img.shields.io/badge/Framework-Oh_My_Fish-blue.svg?style=flat)](https://github.com/oh-my-fish/oh-my-fish) [![MIT License](https://img.shields.io/github/license/oh-my-fish/theme-bobthefish.svg?style=flat)](/LICENSE.md)
+This fork uses the fish standard layout, keeping the functions in the `functions` directory. It is **not** compatibile with oh-my-fish. The settings should work the same for the most part. If anything is incompatibile, please create an issue.
 
 ![bobthefish][screencast]
 
-
 ### Installation
 
-Be sure to have Oh My Fish installed. Then just:
+Copy the files directly into your ~/.config/fish/functions directory, or use a plugin manager such as [fisher][fisher]:
 
-    omf install bobthefish
+    fisher install comfortablynick/theme-bobthefish
 
 You will need a [Powerline-patched font][patching] for this to work, unless you enable the compatibility fallback option:
 
@@ -231,6 +230,7 @@ end
 
 
 [fish]:       https://github.com/fish-shell/fish-shell
+[fisher]:     https://github.com/jorgebucaran/fisher
 [screencast]: https://cloud.githubusercontent.com/assets/53660/18028510/f16f6b2c-6c35-11e6-8eb9-9f23ea3cce2e.gif
 [patching]:   https://powerline.readthedocs.org/en/master/installation.html#patched-fonts
 [fonts]:      https://github.com/Lokaltog/powerline-fonts
